@@ -1,0 +1,207 @@
+<section class="container">
+  <form class="formulario" #form="ngForm" (submit)="onSubmit()">
+    <div class="s12" class="row">
+      <div class="col s12">
+        <h2 name="tituloH2" for="tituloH2" class="titulo-cadastro">
+          {{ tituloH2 }}
+        </h2>
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label class="form-field__label" for="nome">Nome do Jogo</label>
+      <input
+        [(ngModel)]="this.nomeDoJogo"
+        class="validate form-field__input"
+        id="nomeDoJogo"
+        type="text"
+        name="nome"
+        #nome="ngModel"
+        pattern="[^#£€*?&|\/°.]*"
+        required
+      />
+      <div class="red-text" [hidden]="nome.valid || nome.untouched">
+        Por favor, informe um nome válido para o Jogo. Os seguintes caracteres
+        não podem ser utilizados ^#£€*?&|\/°.
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label class="form-field__label" for="console">Console</label>
+
+      <select
+        [(ngModel)]="console"
+        (change)="this.onSelectChangeConsole($event)"
+        class="validate form-field"
+        style="display: block"
+        name="consoleSelecionado"
+        #consoleSelecionado="ngModel"
+        required
+      >
+        <option value="" disabled selected>Console</option>
+        <option *ngFor="let console of consoles" value="{{ console }}">
+          {{ console }}
+        </option>
+      </select>
+
+      <div
+        class="red-text"
+        [hidden]="consoleSelecionado.valid || consoleSelecionado.untouched"
+      >
+        Por favor, informe o console.
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label class="form-field__label" for="genero">Gênero</label>
+
+      <select
+        [(ngModel)]="genero"
+        (change)="this.onSelectChangeGenero($event)"
+        class="validate form-field"
+        style="display: block"
+        name="select-generoSelecionado"
+        #generoSelecionado="ngModel"
+        required
+      >
+        <option value="" disabled selected>Gênero</option>
+        <option *ngFor="let genero of generos" value="{{ genero }}">
+          {{ genero }}
+        </option>
+      </select>
+      <div
+        class="red-text"
+        [hidden]="generoSelecionado.valid || generoSelecionado.untouched"
+      >
+        Por favor, informe o gênero do jogo.
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label class="form-field__label" for="data">Data do zeramento</label>
+      <input
+        [(ngModel)]="this.data"
+        type="date"
+        class="validate datepicker"
+        name="input-data"
+        class="form-field__input"
+        id="data"
+        required
+        #dataSelecionada="ngModel"
+      />
+
+      <div
+        class="red-text"
+        [hidden]="dataSelecionada.valid || dataSelecionada.untouched"
+      >
+        Por favor, informe uma data válida de zeramento do jogo.
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label class="form-field__label" for="horas">Horas Jogadas</label>
+      <input
+        [(ngModel)]="this.horasJogadas"
+        name="input-horasJogadas"
+        class="validate form-field__input"
+        id="horas"
+        pattern="^[0-9]{0,5}$"
+        required
+        #horas="ngModel"
+        type="text"
+      />
+      <div class="red-text" [hidden]="horas.valid || horas.untouched">
+        Por favor, informe a quantidade de horas utilizadas para zerar o jogo.
+        Valor entre 0 - 99999.
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label class="form-field__label" for="minutos">Minutos Jogados</label>
+      <input
+        [(ngModel)]="this.minutosJogados"
+        name="input-minutosJogados"
+        class="validate form-field__input"
+        id="minutos"
+        pattern="^([0-9]|[1-5][0-9]|59)$"
+        required
+        #minutos="ngModel"
+        type="text"
+      />
+      <div class="red-text" [hidden]="minutos.valid || minutos.untouched">
+        Por favor, informe quantos minutos você utilizou para zerar o jogo.
+        Valor entre 0 - 59.
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label class="form-field__label" for="avaliacao">Avaliação do jogo</label>
+
+      <select
+        [(ngModel)]="avaliacao"
+        (change)="this.onSelectChangeAvaliacao($event)"
+        class="validate form-field"
+        style="display: block"
+        name="select-avaliacaoSelecionada"
+        #avaliacaoSelecionada="ngModel"
+        required
+      >
+        <option value="" disabled selected>Avaliacao</option>
+        <option *ngFor="let avaliacao of avaliacoes" value="{{ avaliacao }}">
+          {{ avaliacao }}
+        </option>
+      </select>
+      <div
+        class="red-text"
+        [hidden]="avaliacaoSelecionada.valid || avaliacaoSelecionada.untouched"
+      >
+        Por favor, selecione uma avaliação para o jogo.
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label class="form-field__label" for="dificuldade"
+        >Dificuldade do jogo</label
+      >
+
+      <select
+        [(ngModel)]="dificuldade"
+        (change)="this.onSelectChangeDificuldade($event)"
+        class="validate form-field"
+        style="display: block"
+        name="select-dificuldade"
+        #dificuldadeSelecionada="ngModel"
+        required
+      >
+        <option value="" disabled selected>
+          Selecione a dificuldade do jogo
+        </option>
+        <option
+          *ngFor="let dificuldade of dificuldades"
+          value="{{ dificuldade }}"
+        >
+          {{ dificuldade }}
+        </option>
+      </select>
+
+      <div
+        class="red-text"
+        [hidden]="
+          dificuldadeSelecionada.valid || dificuldadeSelecionada.untouched
+        "
+      >
+        Por favor, selecione uma dificuldade para o jogo.
+      </div>
+    </div>
+
+    <div class="botao-wrapper">
+      <button
+        class="btn waves-effect waves-light purple darken-4"
+        type="submit"
+        [disabled]="!form.valid"
+      >
+        Salvar
+      </button>
+    </div>
+  </form>
+</section>

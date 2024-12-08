@@ -1,0 +1,79 @@
+<section class="container">
+  <ng-container *ngIf="this.quantidadeZerados > 0; else templateA">
+    <div class="row">
+      <div class="col s12">
+        <table class="responsive-table">
+          <thead>
+            <tr>
+              <th>Jogo</th>
+              <th>Console</th>
+              <th>Gênero</th>
+              <th>Zerado em</th>
+              <th>Tempo Jogado</th>
+              <th>Avaliação</th>
+              <th>Dificuldade</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let z of zerados">
+              <td>{{ z.nome | titlecase }}</td>
+              <td>{{ z.console | titlecase }}</td>
+              <td>{{ z.genero | titlecase }}</td>
+              <td>{{ z.data | date: "dd/MM/yyyy" }}</td>
+              <td>
+                {{ z.horasJogadas }} hora(s) e {{ z.minutosJogados }} minuto(s)
+              </td>
+              <td>{{ z.avaliacao }}</td>
+              <td>{{ z.dificuldade | uppercase }}</td>
+
+              <td>
+                <button
+                  (click)="atualizarJogo(z.nome)"
+                  class="btn tooltipped amber"
+                  data-position="bottom"
+                  [title]="'Alterar'"
+                >
+                  <i class="material-icons">edit</i>
+                </button>
+
+                <button
+                  (click)="apagarJogo(z)"
+                  class="btn tooltipped red"
+                  [title]="'Apagar'"
+                  data-position="bottom"
+                >
+                  <i class="material-icons">delete</i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div
+        *ngIf="this.quantidadeZerados >= 1 && this.quantidadeZerados <= 5"
+        class="col s12 m6 offset-m3 card-panel teal lighten-2"
+        id="div-panel"
+      >
+        Você possui poucos jogos zerados. Cadastre mais jogos para aumentar a
+        sua biblioteca de jogos zerados!
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-template #templateA>
+    <app-modal
+      [show]="modal.show"
+      [content]="modal"
+      (closeEvent)="onCloseModal()"
+    ></app-modal>
+
+    <app-painel-jogos
+      [value]="this.quantidadeZerados"
+      (semJogosZeradosEvent)="this.onSemJogosZeradosEvent($event)"
+    >
+    </app-painel-jogos>
+  </ng-template>
+</section>

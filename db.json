@@ -1,0 +1,70 @@
+{
+  "zerados": [
+    {
+      "id": 1,
+      "nome": "Far Cry 3",
+      "console": "PC",
+      "genero": "Shooter",
+      "dificuldade": "Fácil",
+      "data": "2020-01-10",
+      "horasJogadas": "44",
+      "minutosJogados": "33",
+      "avaliacao": "6"
+    },
+    {
+      "id": 2,
+      "nome": "Sonic Adventure 2",
+      "console": "PC",
+      "genero": "Plataforma",
+      "dificuldade": "Médio",
+      "data": "2020-02-10",
+      "horasJogadas": "44",
+      "minutosJogados": "55",
+      "avaliacao": "6"
+    },
+    {
+      "id": 3,
+      "nome": "Mafia 2",
+      "console": "PC",
+      "genero": "Ação",
+      "dificuldade": "Difícil",
+      "data": "2020-01-10",
+      "horasJogadas": "55",
+      "minutosJogados": "22",
+      "avaliacao": "4"
+    },
+    {
+      "id": 4,
+      "nome": "Road Redemption",
+      "console": "Playstation 4",
+      "genero": "Corrida",
+      "dificuldade": "Fácil",
+      "data": "2022-02-20",
+      "horasJogadas": "33",
+      "minutosJogados": "22",
+      "avaliacao": "3"
+    },
+    {
+      "id": 5,
+      "nome": "Road Rash",
+      "console": "Playstation 4",
+      "genero": "Corrida",
+      "dificuldade": "Difícil",
+      "data": "2021-04-30",
+      "horasJogadas": "55",
+      "minutosJogados": "22",
+      "avaliacao": "9"
+    },
+    {
+      "id": 6,
+      "nome": "Need For Speed Underground Remastered",
+      "console": "Xbox One",
+      "genero": "Corrida",
+      "dificuldade": "Difícil",
+      "data": "2020-05-10",
+      "horasJogadas": "45",
+      "minutosJogados": "33",
+      "avaliacao": "8"
+    }
+  ]
+}

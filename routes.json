@@ -1,0 +1,6 @@
+{
+
+  "/zerados/": "/zerados",
+  "/zerados/:id": "/zerados/:id"
+
+}

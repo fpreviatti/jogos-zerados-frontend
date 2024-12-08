@@ -1,0 +1,49 @@
+{
+  "name": "jogos-zerados",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "export NODE_OPTIONS=--openssl-legacy-provider && ng serve",
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider && ng build",
+    "ghpages": "angular-cli-ghpages --dir=dist/jogos-zerados",
+    "deploy": "npm run build & npm run ghpages",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "watch": "ng build --watch --configuration development",
+    "json:server": "json-server --watch db.json",
+    "json:server:routes": "json-server --watch db.json --routes routes.json"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "~12.0.5",
+    "@angular/common": "~12.0.5",
+    "@angular/compiler": "~12.0.5",
+    "@angular/core": "~12.0.5",
+    "@angular/forms": "~12.0.5",
+    "@angular/platform-browser": "~12.0.5",
+    "@angular/platform-browser-dynamic": "~12.0.5",
+    "@angular/router": "~12.0.5",
+    "jquery": "^3.6.0",
+    "json-server": "^0.16.3",
+    "material-icons": "^1.11.4",
+    "materialize-css": "^1.0.0",
+    "ngx-mask": "^13.1.15",
+    "rxjs": "~6.6.0",
+    "tslib": "^2.1.0",
+    "zone.js": "~0.11.4"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~12.0.5",
+    "@angular/cli": "~12.0.5",
+    "@angular/compiler-cli": "~12.0.5",
+    "@types/jquery": "^3.5.14",
+    "@types/materialize-css": "^1.0.10",
+    "@types/node": "^12.11.1",
+    "angular-cli-ghpages": "^1.0.3",
+    "karma": "~6.3.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "~2.0.3",
+    "typescript": "~4.2.3"
+  }
+}
